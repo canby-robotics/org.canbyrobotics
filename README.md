@@ -21,3 +21,26 @@ Use Node.js 24 (see [`.nvmrc`](.nvmrc)), then install and start the app:
 npm ci
 npm run dev
 ```
+
+## Brand system
+
+The 2026-2027 BIOGLOW™ palette and usage rules are codified for application
+code and contributors. Founders is the project's only approved edition;
+Future teal is retained as reference-only source metadata.
+
+- [`docs/brand/bioglow.md`](docs/brand/bioglow.md) is the implementation guide.
+- [`src/brand/bioglow.tokens.json`](src/brand/bioglow.tokens.json) is the
+  canonical color source.
+- [`src/brand/bioglow.assets.json`](src/brand/bioglow.assets.json) catalogs
+  approved web artwork and its exact intrinsic dimensions.
+- [`public/brand/bioglow/README.md`](public/brand/bioglow/README.md) governs
+  official logo selection, use, and intake.
+- [`AGENTS.md`](AGENTS.md) contains concise rules for automated contributors.
+
+After changing tokens, regenerate the committed CSS. After changing tokens or
+artwork, run the complete brand check:
+
+```sh
+npm run brand:generate
+npm run brand:check
+```
