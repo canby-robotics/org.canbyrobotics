@@ -7,14 +7,9 @@
   --bioglow-core-light-green: #C6DE94;
   --bioglow-core-yellow: #F0E973;
   --bioglow-founders-purple: #D59CD6;
-  --bioglow-future-teal: #22D8C2;
 }
 
 [data-bioglow-edition="founders"] {
   --bioglow-edition-accent: var(--bioglow-founders-purple);
-}
-
-[data-bioglow-edition="future"] {
-  --bioglow-edition-accent: var(--bioglow-future-teal);
 }
 

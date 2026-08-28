@@ -10,6 +10,7 @@ reusable implementation guidance without redistributing the source PDF.
 | --- | --- |
 | Official color values | [`src/brand/bioglow.tokens.json`](../../src/brand/bioglow.tokens.json) |
 | CSS custom properties | [`src/brand/bioglow.css`](../../src/brand/bioglow.css), generated from the JSON tokens |
+| Approved web artwork | [`src/brand/bioglow.assets.json`](../../src/brand/bioglow.assets.json) and [`public/brand/bioglow/`](../../public/brand/bioglow/) |
 | Logo asset policy | [`public/brand/bioglow/README.md`](../../public/brand/bioglow/README.md) |
 | Official brand rules | 2026-2027 BIOGLOW Style Guide, FL078 |
 
@@ -43,8 +44,9 @@ and present them as official guidance.
 - Pair season artwork only with the appropriate official FIRST LEGO League
   program or division logo and its official program-specific color.
 
-No approved logo artwork is currently stored in this repository. The images
-inside the source PDF are examples, not reusable asset files.
+The repository contains 11 approved, source-provided RGB PNGs: six general
+marks, three partner lockups, and two Founders Edition marks. Future Edition
+artwork and print-only files are intentionally excluded.
 
 ## Official palette
 
@@ -59,7 +61,7 @@ swatches. The numeric values come directly from FL078.
 | Yellow | `#F0E973` | 240, 233, 115 | 8, 1, 78, 0 | 3935 C | `--bioglow-core-yellow` |
 | Black | `#000000` | 0, 0, 0 | 0, 0, 0, 100 | Black 6 C | `--bioglow-core-black` |
 | Founders Edition purple | `#D59CD6` | 213, 156, 214 | 16, 43, 0, 0 | 7438 C | `--bioglow-founders-purple` |
-| Future Edition teal | `#22D8C2` | 34, 216, 194 | 63, 0, 35, 0 | 333 C | `--bioglow-future-teal` |
+| Future Edition teal | `#22D8C2` | 34, 216, 194 | 63, 0, 35, 0 | 333 C | Reference only; not generated |
 
 Use the CSS variables instead of repeating HEX values in application styles:
 
@@ -71,13 +73,17 @@ Use the CSS variables instead of repeating HEX values in application styles:
 }
 ```
 
-## Edition accents
+## Project edition
 
-Both edition colors are available, but neither is a global default. Set the
-edition explicitly on the relevant container:
+Founders is the only approved project edition. Future teal remains in the JSON
+source to preserve the complete official palette, but Future artwork,
+`--bioglow-future-teal`, and a Future edition selector are intentionally not
+available to application code.
+
+Set the Founders edition explicitly on the relevant container:
 
 ```jsx
-<section data-bioglow-edition="future">
+<section data-bioglow-edition="founders">
   <a className="seasonLink" href="/season">
     Learn about BIOGLOW™
   </a>
@@ -90,10 +96,8 @@ edition explicitly on the relevant container:
 }
 ```
 
-Use `data-bioglow-edition="founders"` for Founders Edition purple and
-`data-bioglow-edition="future"` for Future Edition teal. The accent variable
-is intentionally undefined outside those contexts so an edition cannot be
-selected accidentally.
+The accent variable is intentionally undefined outside the Founders context
+so edition styling cannot be selected accidentally.
 
 ## Project accessibility guidance
 
@@ -105,15 +109,15 @@ contrast threshold for normal text.
 | --- | --- |
 | Light green | Black (14.28:1), dark green (5.81:1) |
 | Green | Black (6.98:1) |
-| Dark green | Light green (5.81:1), yellow (6.76:1), Future teal (4.75:1) |
+| Dark green | Light green (5.81:1), yellow (6.76:1) |
 | Yellow | Black (16.61:1), dark green (6.76:1) |
-| Black | Light green (14.28:1), green (6.98:1), yellow (16.61:1), Founders purple (9.56:1), Future teal (11.67:1) |
+| Black | Light green (14.28:1), green (6.98:1), yellow (16.61:1), Founders purple (9.56:1) |
 | Founders purple | Black (9.56:1) |
-| Future teal | Black (11.67:1), dark green (4.75:1) |
 
 Recheck any unlisted foreground/background pair before using it for text.
 Do not rely on color alone to communicate state or meaning, and preserve
-visible focus indicators for interactive elements.
+visible focus indicators for interactive elements. Future teal is
+reference-only and must not be used in project UI.
 
 ## Changing tokens
 
@@ -126,8 +130,9 @@ npm run brand:check
 ```
 
 Do not edit `src/brand/bioglow.css` directly. The production build runs the
-brand check and fails when the generated file is stale or token metadata is
-malformed.
+brand check and fails when the generated file is stale, token metadata is
+malformed, or an approved logo differs from
+`src/brand/bioglow.assets.json`.
 
 ## Attribution
 

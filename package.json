@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "brand:generate": "node scripts/generate-bioglow-css.mjs --write",
-    "brand:check": "node scripts/generate-bioglow-css.mjs --check",
+    "brand:check": "node scripts/generate-bioglow-css.mjs --check && node scripts/check-bioglow-assets.mjs",
     "dev": "next dev",
     "prebuild": "npm run brand:check",
     "build": "next build",

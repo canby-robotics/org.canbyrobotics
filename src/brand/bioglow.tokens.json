@@ -1,6 +1,9 @@
 {
   "name": "BIOGLOW",
   "season": "2026-2027",
+  "project": {
+    "activeEdition": "founders"
+  },
   "source": {
     "title": "BIOGLOW Style Guide",
     "reference": "FL078",
@@ -53,6 +56,7 @@
     "editions": {
       "founders": {
         "label": "Founders Edition purple",
+        "projectStatus": "active",
         "cssVariable": "--bioglow-founders-purple",
         "hex": "#D59CD6",
         "rgb": [213, 156, 214],
@@ -61,7 +65,7 @@
       },
       "future": {
         "label": "Future Edition teal",
-        "cssVariable": "--bioglow-future-teal",
+        "projectStatus": "reference-only",
         "hex": "#22D8C2",
         "rgb": [34, 216, 194],
         "cmyk": [63, 0, 35, 0],

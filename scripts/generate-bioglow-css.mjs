@@ -22,6 +22,10 @@ const expectedCoreTokens = [
   "yellow",
 ];
 const expectedEditions = ["founders", "future"];
+const expectedEditionStatuses = {
+  founders: "active",
+  future: "reference-only",
+};
 
 function assert(condition, message) {
   if (!condition) {
@@ -43,11 +47,24 @@ function hexFromRgb(rgb) {
     .toUpperCase()}`;
 }
 
-function validateColor(id, color, seenVariables, seenHexValues) {
-  assert(
-    /^--bioglow-[a-z0-9-]+$/.test(color.cssVariable),
-    `${id} has an invalid CSS variable name`,
-  );
+function validateColor(
+  id,
+  color,
+  seenVariables,
+  seenHexValues,
+  requiresCssVariable = true,
+) {
+  if (requiresCssVariable) {
+    assert(
+      /^--bioglow-[a-z0-9-]+$/.test(color.cssVariable),
+      `${id} has an invalid CSS variable name`,
+    );
+  } else {
+    assert(
+      color.cssVariable === undefined,
+      `${id} is reference-only and must not expose a CSS variable`,
+    );
+  }
   assert(
     /^#[0-9A-F]{6}$/.test(color.hex),
     `${id} must use an uppercase six-digit HEX value`,
@@ -82,16 +99,20 @@ function validateColor(id, color, seenVariables, seenHexValues) {
     typeof color.pms === "string" && color.pms.length > 0,
     `${id} must define a PMS value`,
   );
-  assert(
-    !seenVariables.has(color.cssVariable),
-    `${id} duplicates the CSS variable ${color.cssVariable}`,
-  );
+  if (requiresCssVariable) {
+    assert(
+      !seenVariables.has(color.cssVariable),
+      `${id} duplicates the CSS variable ${color.cssVariable}`,
+    );
+  }
   assert(
     !seenHexValues.has(color.hex),
     `${id} duplicates the HEX value ${color.hex}`,
   );
 
-  seenVariables.add(color.cssVariable);
+  if (requiresCssVariable) {
+    seenVariables.add(color.cssVariable);
+  }
   seenHexValues.add(color.hex);
 }
 
@@ -104,6 +125,10 @@ function validateTokens(tokens) {
   assert(
     tokens.source?.reference === "FL078",
     "The token set must identify source reference FL078",
+  );
+  assert(
+    tokens.project?.activeEdition === "founders",
+    "The project active edition must be founders",
   );
 
   const coreTokens = Object.keys(tokens.colors?.core ?? {}).sort();
@@ -126,14 +151,34 @@ function validateTokens(tokens) {
   }
 
   for (const [id, color] of Object.entries(tokens.colors.editions)) {
-    validateColor(`editions.${id}`, color, seenVariables, seenHexValues);
+    const expectedStatus = expectedEditionStatuses[id];
+    assert(
+      color.projectStatus === expectedStatus,
+      `editions.${id} must have projectStatus ${expectedStatus}`,
+    );
+    validateColor(
+      `editions.${id}`,
+      color,
+      seenVariables,
+      seenHexValues,
+      color.projectStatus === "active",
+    );
   }
 }
 
 function generateCss(tokens) {
+  const activeEditions = Object.entries(tokens.colors.editions).filter(
+    ([, color]) => color.projectStatus === "active",
+  );
+  assert(
+    activeEditions.length === 1 &&
+      activeEditions[0][0] === tokens.project.activeEdition,
+    "Exactly one edition must be active",
+  );
+
   const colors = [
     ...Object.values(tokens.colors.core),
-    ...Object.values(tokens.colors.editions),
+    ...activeEditions.map(([, color]) => color),
   ].sort((left, right) => left.cssVariable.localeCompare(right.cssVariable));
 
   const lines = [
@@ -147,8 +192,7 @@ function generateCss(tokens) {
     "",
   ];
 
-  for (const edition of expectedEditions) {
-    const color = tokens.colors.editions[edition];
+  for (const [edition, color] of activeEditions) {
     lines.push(
       `[data-bioglow-edition="${edition}"] {`,
       `  --bioglow-edition-accent: var(${color.cssVariable});`,
