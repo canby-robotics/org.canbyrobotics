@@ -1,0 +1,72 @@
+{
+  "name": "BIOGLOW",
+  "season": "2026-2027",
+  "source": {
+    "title": "BIOGLOW Style Guide",
+    "reference": "FL078",
+    "publisher": "FIRST and the LEGO Group",
+    "copyright": "(c) 2026 FIRST and the LEGO Group"
+  },
+  "colors": {
+    "core": {
+      "light-green": {
+        "label": "Light green",
+        "cssVariable": "--bioglow-core-light-green",
+        "hex": "#C6DE94",
+        "rgb": [198, 222, 148],
+        "cmyk": [27, 0, 59, 0],
+        "pms": "365 C"
+      },
+      "green": {
+        "label": "Green",
+        "cssVariable": "--bioglow-core-green",
+        "hex": "#70A334",
+        "rgb": [112, 163, 52],
+        "cmyk": [68, 12, 100, 1],
+        "pms": "369 C"
+      },
+      "dark-green": {
+        "label": "Dark green",
+        "cssVariable": "--bioglow-core-dark-green",
+        "hex": "#2C5535",
+        "rgb": [44, 85, 53],
+        "cmyk": [86, 40, 91, 39],
+        "pms": "357 C"
+      },
+      "yellow": {
+        "label": "Yellow",
+        "cssVariable": "--bioglow-core-yellow",
+        "hex": "#F0E973",
+        "rgb": [240, 233, 115],
+        "cmyk": [8, 1, 78, 0],
+        "pms": "3935 C"
+      },
+      "black": {
+        "label": "Black",
+        "cssVariable": "--bioglow-core-black",
+        "hex": "#000000",
+        "rgb": [0, 0, 0],
+        "cmyk": [0, 0, 0, 100],
+        "pms": "Black 6 C"
+      }
+    },
+    "editions": {
+      "founders": {
+        "label": "Founders Edition purple",
+        "cssVariable": "--bioglow-founders-purple",
+        "hex": "#D59CD6",
+        "rgb": [213, 156, 214],
+        "cmyk": [16, 43, 0, 0],
+        "pms": "7438 C"
+      },
+      "future": {
+        "label": "Future Edition teal",
+        "cssVariable": "--bioglow-future-teal",
+        "hex": "#22D8C2",
+        "rgb": [34, 216, 194],
+        "cmyk": [63, 0, 35, 0],
+        "pms": "333 C"
+      }
+    }
+  }
+}
