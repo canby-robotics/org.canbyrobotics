@@ -1,3 +1,5 @@
+import { HomePagePreview } from "@/components/HomePagePreview";
+
 export default function Home() {
-  return <main>hello world</main>;
+  return <HomePagePreview />;
 }

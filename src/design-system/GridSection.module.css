@@ -1,0 +1,47 @@
+.section {
+  width: 100%;
+}
+
+.tone-default {
+  background: var(--canby-color-canvas);
+}
+
+.tone-subtle {
+  background: var(--canby-color-surface-subtle);
+}
+
+.divider-top,
+.divider-both {
+  border-block-start: var(--canby-rule-width) solid var(--canby-color-rule);
+}
+
+.divider-bottom,
+.divider-both {
+  border-block-end: var(--canby-rule-width) solid var(--canby-color-rule);
+}
+
+.frame {
+  width: 100%;
+}
+
+.content {
+  min-width: 0;
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.padding-normal {
+  padding: clamp(3rem, 7vw, 5rem) var(--canby-page-gutter);
+}
+
+.padding-spacious {
+  padding: var(--canby-section-space) var(--canby-page-gutter);
+}
+
+@media (min-width: 80rem) {
+  .frame {
+    border-inline: var(--canby-rule-width) solid var(--canby-color-rule);
+  }
+}
