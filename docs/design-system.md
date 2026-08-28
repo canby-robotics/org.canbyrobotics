@@ -23,7 +23,9 @@ Primer's public ESM barrel eagerly imports the entire experimental library, so
 `jsconfig.json` exposes a project-local `@primer-brand/*` alias to the pinned
 package's ESM modules. Import only the components in use through this alias.
 Keep those imports inside the client-side design-system or page preview
-boundary so package upgrades remain contained.
+boundary so package upgrades remain contained. `CanbyThemeProvider` also loads
+Primer's shared functional size tokens so directly imported controls retain
+their standard dimensions and padding; project tokens override their colors.
 
 Primer's `SubdomainNavBar` and `MinimalFooter` are intentionally not used:
 both contain GitHub-specific marks, labels, or destinations. `SiteHeader` and

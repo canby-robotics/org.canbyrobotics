@@ -5,7 +5,6 @@ import { Card } from "@primer-brand/Card/Card.js";
 import { CTABanner } from "@primer-brand/CTABanner/CTABanner.js";
 import { Grid } from "@primer-brand/Grid/Grid.js";
 import { Heading } from "@primer-brand/Heading/Heading.js";
-import { Hero } from "@primer-brand/Hero/Hero.js";
 import { Link } from "@primer-brand/Link/Link.js";
 import { River } from "@primer-brand/river/River/River.js";
 import { Text } from "@primer-brand/Text/Text.js";
@@ -53,46 +52,72 @@ export function HomePagePreview() {
         tabIndex={-1}
       >
         <div id="top">
-          <Hero
-            className={styles.hero}
-            imageBackgroundColor="subtle"
-            variant="gridline-expressive"
-          >
-            <Hero.Label>
-              <span className={styles.placeholderLabel}>
-                Design preview · placeholder copy
-              </span>
-            </Hero.Label>
-            <Hero.Heading>Build boldly. Learn together.</Hero.Heading>
-            <Hero.Description>
-              Replace this introduction with Canby Robotics&apos; approved
-              mission and a concise invitation for students, families, and
-              mentors.
-            </Hero.Description>
-            <Hero.ButtonGroup>
-              <Button as="a" href="#about" size="large" variant="primary">
-                Explore the preview
-              </Button>
-              <Button as="a" href="#season" size="large" variant="secondary">
-                Meet BIOGLOW™
-              </Button>
-            </Hero.ButtonGroup>
-          </Hero>
           <GridSection
             as="div"
-            contentClassName={styles.heroArtworkContent}
-            divider="both"
+            contentClassName={styles.hero}
+            divider="bottom"
             padding="none"
-            tone="subtle"
           >
-            <div className={styles.heroArtwork}>
-              <SeasonLogo
-                alt="BIOGLOW™ Founders Edition"
-                assetId="founders-horizontal-full-color"
-                className={styles.heroLogo}
-                loading="eager"
-                sizes="(max-width: 80rem) 86vw, 64rem"
-              />
+            <div className={styles.heroSplit}>
+              <section
+                aria-labelledby="home-hero-heading"
+                className={styles.heroCopy}
+              >
+                <span className={styles.placeholderLabel}>
+                  Design preview · placeholder copy
+                </span>
+                <Heading
+                  as="h1"
+                  className={styles.heroHeading}
+                  id="home-hero-heading"
+                  size="1"
+                >
+                  Build boldly.
+                  <br />
+                  Learn together.
+                </Heading>
+                <Text
+                  as="p"
+                  className={styles.heroDescription}
+                  size="300"
+                  variant="muted"
+                >
+                  Replace this introduction with Canby Robotics&apos; approved
+                  mission and a concise invitation for students, families, and
+                  mentors.
+                </Text>
+                <div className={styles.heroActions}>
+                  <Button as="a" href="#about" size="large" variant="primary">
+                    Explore the preview
+                  </Button>
+                  <Button
+                    as="a"
+                    href="#season"
+                    size="large"
+                    variant="secondary"
+                  >
+                    Meet BIOGLOW™
+                  </Button>
+                </div>
+              </section>
+              <aside
+                aria-label="Current season"
+                className={styles.heroSeason}
+              >
+                <div className={styles.heroSeasonMeta}>
+                  <span>2026–2027</span>
+                  <span>Founders Edition</span>
+                </div>
+                <div className={styles.heroLogoFrame}>
+                  <SeasonLogo
+                    alt="BIOGLOW™ Founders Edition"
+                    assetId="founders-horizontal-full-color"
+                    className={styles.heroLogo}
+                    loading="eager"
+                    sizes="(max-width: 48rem) 58vw, 20rem"
+                  />
+                </div>
+              </aside>
             </div>
           </GridSection>
         </div>

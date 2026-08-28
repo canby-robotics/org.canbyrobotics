@@ -35,7 +35,6 @@
 }
 
 .attribution {
-  max-width: 54rem;
   padding-block-start: 1.5rem;
   border-block-start: var(--canby-rule-width) solid var(--canby-color-rule);
 }
