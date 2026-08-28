@@ -44,3 +44,10 @@ artwork, run the complete brand check:
 npm run brand:generate
 npm run brand:check
 ```
+
+## Design system
+
+The site uses Primer Brand through a project-owned light theme and reusable
+gridline layout components. See [`docs/design-system.md`](docs/design-system.md)
+for the dependency boundary, semantic tokens, layout rules, and approved
+component surface.

@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@primer-brand/*": ["./node_modules/@primer/react-brand/esm/*"]
     }
   }
 }

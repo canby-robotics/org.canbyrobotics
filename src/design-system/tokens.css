@@ -1,0 +1,94 @@
+:root {
+  color-scheme: light;
+
+  --canby-color-canvas: #ffffff;
+  --canby-color-surface-subtle: color-mix(
+    in srgb,
+    var(--bioglow-core-light-green) 24%,
+    white
+  );
+  --canby-color-surface-strong: var(--bioglow-core-light-green);
+  --canby-color-text: var(--bioglow-core-black);
+  --canby-color-text-muted: var(--bioglow-core-dark-green);
+  --canby-color-rule: color-mix(
+    in srgb,
+    var(--bioglow-core-dark-green) 34%,
+    transparent
+  );
+  --canby-color-rule-strong: var(--bioglow-core-dark-green);
+  --canby-color-action: var(--bioglow-core-dark-green);
+  --canby-color-action-hover: var(--bioglow-core-black);
+  --canby-color-focus: var(--bioglow-core-dark-green);
+  --canby-color-preview: var(
+    --bioglow-edition-accent,
+    var(--bioglow-founders-purple)
+  );
+
+  --canby-grid-max-width: 80rem;
+  --canby-page-gutter: 1.25rem;
+  --canby-section-space: clamp(3.5rem, 8vw, 7rem);
+  --canby-rule-width: 1px;
+  --canby-radius-small: 0.5rem;
+  --canby-radius-medium: 0.75rem;
+  --canby-radius-large: 1.5rem;
+}
+
+.canby-theme[data-color-mode="light"] {
+  --brand-color-accent-primary: var(--bioglow-core-dark-green);
+  --brand-color-accent-secondary: var(--bioglow-core-yellow);
+  --brand-color-text-default: var(--canby-color-text);
+  --brand-color-text-muted: var(--canby-color-text-muted);
+  --brand-color-text-subtle: var(--canby-color-text-muted);
+  --brand-color-text-onEmphasis: var(--bioglow-core-light-green);
+  --brand-color-text-emphasized: var(--bioglow-core-dark-green);
+  --brand-color-text-link-rest: var(--bioglow-core-dark-green);
+  --brand-color-text-link-pressed: var(--bioglow-core-black);
+  --brand-color-neutral-emphasisPlus: var(--bioglow-core-black);
+  --brand-color-neutral-emphasis: var(--bioglow-core-dark-green);
+  --brand-color-neutral-muted: var(--canby-color-rule);
+  --brand-color-neutral-subtle: var(--canby-color-surface-subtle);
+  --brand-color-canvas-default: var(--canby-color-canvas);
+  --brand-color-canvas-invert: var(--bioglow-core-black);
+  --brand-color-canvas-overlay: var(--canby-color-canvas);
+  --brand-color-canvas-inset: var(--canby-color-surface-subtle);
+  --brand-color-canvas-subtle: var(--canby-color-surface-subtle);
+  --brand-color-canvas-muted: var(--canby-color-surface-subtle);
+  --brand-color-border-default: var(--canby-color-rule-strong);
+  --brand-color-border-muted: var(--canby-color-rule);
+  --brand-color-border-subtle: var(--canby-color-rule);
+  --brand-color-focus: var(--canby-color-focus);
+
+  --brand-button-primary-bgColor-rest: var(--canby-color-action);
+  --brand-button-primary-bgColor-hover: var(--canby-color-action-hover);
+  --brand-button-primary-bgColor-active: var(--canby-color-action-hover);
+  --brand-button-primary-borderColor-rest: var(--canby-color-action);
+  --brand-button-primary-borderColor-hover: var(--canby-color-action-hover);
+  --brand-button-primary-borderColor-active: var(--canby-color-action-hover);
+  --brand-button-primary-fgColor-rest: var(--bioglow-core-light-green);
+  --brand-button-secondary-bgColor-rest: transparent;
+  --brand-button-secondary-bgColor-hover: var(--canby-color-surface-subtle);
+  --brand-button-secondary-bgColor-active: var(--bioglow-core-light-green);
+  --brand-button-secondary-borderColor-rest: var(--canby-color-rule-strong);
+  --brand-button-secondary-borderColor-hover: var(--canby-color-rule-strong);
+  --brand-button-secondary-borderColor-active: var(--canby-color-rule-strong);
+  --brand-button-secondary-fgColor-rest: var(--canby-color-text);
+
+  --brand-borderRadius-small: var(--canby-radius-small);
+  --brand-borderRadius-medium: var(--canby-radius-medium);
+  --brand-borderRadius-large: var(--canby-radius-large);
+  --brand-borderWidth-thin: var(--canby-rule-width);
+  --brand-Grid-spacing-margin: var(--canby-page-gutter);
+  --brand-Hero-bgColor-gridlineGridInner: var(--canby-color-canvas);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --canby-page-gutter: 2.5rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  :root {
+    --canby-page-gutter: 4rem;
+  }
+}

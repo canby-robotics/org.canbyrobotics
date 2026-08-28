@@ -1,0 +1,103 @@
+.header {
+  position: relative;
+  z-index: 10;
+  border-block-end: var(--canby-rule-width) solid var(--canby-color-rule);
+  background: var(--canby-color-canvas);
+}
+
+.skipLink {
+  position: absolute;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 20;
+  padding: 0.75rem 1rem;
+  transform: translateY(-200%);
+  border: var(--canby-rule-width) solid var(--canby-color-text);
+  border-radius: var(--canby-radius-small);
+  color: var(--bioglow-core-light-green);
+  background: var(--canby-color-action);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+.inner {
+  display: grid;
+  width: 100%;
+  max-width: var(--canby-grid-max-width);
+  min-height: 5rem;
+  margin-inline: auto;
+  padding: 1rem var(--canby-page-gutter);
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand {
+  color: var(--canby-color-text);
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.navigation {
+  display: flex;
+  justify-self: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.navigation a {
+  color: var(--canby-color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  color: var(--canby-color-text);
+  text-decoration: underline;
+  text-decoration-color: var(--bioglow-core-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3rem;
+}
+
+@media (min-width: 80rem) {
+  .inner {
+    border-inline: var(--canby-rule-width) solid var(--canby-color-rule);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .inner {
+    padding-block-end: 0;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+  }
+
+  .navigation {
+    width: calc(100% + (2 * var(--canby-page-gutter)));
+    margin-inline: calc(-1 * var(--canby-page-gutter));
+    padding: 0.85rem var(--canby-page-gutter);
+    border-block-start: var(--canby-rule-width) solid var(--canby-color-rule);
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 25rem) {
+  .inner {
+    grid-template-columns: 1fr;
+    padding-block-end: 0;
+  }
+
+  .inner > a:last-child {
+    width: 100%;
+  }
+
+  .navigation {
+    grid-row: 3;
+  }
+}
