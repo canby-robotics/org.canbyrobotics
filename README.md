@@ -7,8 +7,9 @@ Website for Canby Robotics
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/canby-robotics/org.canbyrobotics)
 
 The committed [`netlify.toml`](netlify.toml) configures the production build and
-publish directory. Netlify automatically provides its maintained OpenNext
-adapter for Next.js, so no Netlify-specific runtime dependency is required.
+publish directory and explicitly enables Netlify's maintained Next.js runtime.
+The runtime converts the `.next` build output into the routes and functions
+required to serve the application.
 
 To deploy manually, import this repository in Netlify and deploy it with the
 settings detected from `netlify.toml`.
