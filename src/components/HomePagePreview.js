@@ -240,15 +240,15 @@ export function HomePagePreview() {
           id="join"
         >
           <CTABanner.Heading as="h2">
-            Ready to replace this with the real next step?
+            Interested in Canby Robotics?
           </CTABanner.Heading>
           <CTABanner.Description>
-            Placeholder contact copy: add the approved way for students,
-            families, mentors, or sponsors to connect with Canby Robotics.
+            Use the interest form to tell us you would like to learn more about
+            joining the club.
           </CTABanner.Description>
           <CTABanner.ButtonGroup>
-            <Button as="a" href="#top" size="large" variant="primary">
-              Review the full preview
+            <Button as="a" href="/interest" size="large" variant="primary">
+              View the interest form
             </Button>
           </CTABanner.ButtonGroup>
         </CTABanner>
