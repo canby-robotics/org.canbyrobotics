@@ -1,6 +1,7 @@
 "use client";
 
 import { Text } from "@primer-brand/Text/Text.js";
+import Link from "next/link";
 
 import styles from "./SiteFooter.module.css";
 
@@ -17,10 +18,10 @@ export function SiteFooter() {
           </Text>
         </div>
         <nav className={styles.links} aria-label="Footer navigation">
-          <a href="#about">About</a>
-          <a href="#program">Program</a>
-          <a href="#season">Season</a>
-          <a href="#top">Back to top</a>
+          <Link href="/#about">About</Link>
+          <Link href="/#program">Program</Link>
+          <Link href="/#season">Season</Link>
+          <Link href="/#top">Back to top</Link>
         </nav>
         <Text as="p" className={styles.attribution} size="100" variant="muted">
           FIRST® is a trademark of For Inspiration and Recognition of Science

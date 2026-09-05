@@ -1,0 +1,63 @@
+.main {
+  overflow: clip;
+}
+
+.main:focus {
+  outline: none;
+}
+
+.section {
+  border-block-end: var(--canby-rule-width) solid var(--canby-color-rule);
+  background: var(--canby-color-surface-subtle);
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--canby-grid-max-width);
+  margin-inline: auto;
+  padding: clamp(3rem, 7vw, 5rem) var(--canby-page-gutter);
+}
+
+.heading {
+  width: min(100%, 48rem);
+  margin: 0 auto clamp(2rem, 5vw, 3rem);
+  color: var(--canby-color-text);
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.formFrame {
+  width: min(100%, 48rem);
+  margin-inline: auto;
+  overflow: hidden;
+  border: var(--canby-rule-width) solid var(--canby-color-rule-strong);
+  border-radius: var(--canby-radius-medium);
+  background: var(--canby-color-canvas);
+}
+
+.form {
+  display: block;
+  width: 100%;
+  height: 1120px;
+  border: 0;
+}
+
+@media (min-width: 80rem) {
+  .inner {
+    border-inline: var(--canby-rule-width) solid var(--canby-color-rule);
+  }
+}
+
+@media (max-width: 35rem) {
+  .form {
+    height: 1360px;
+  }
+}
+
+@media (max-width: 22rem) {
+  .form {
+    height: 1540px;
+  }
+}

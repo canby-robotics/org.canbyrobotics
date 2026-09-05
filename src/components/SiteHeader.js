@@ -2,13 +2,14 @@
 
 import { Button } from "@primer-brand/Button/Button.js";
 import { Text } from "@primer-brand/Text/Text.js";
+import Link from "next/link";
 
 import styles from "./SiteHeader.module.css";
 
 const navigation = [
-  { href: "#about", label: "About" },
-  { href: "#program", label: "Program" },
-  { href: "#season", label: "Season" },
+  { href: "/#about", label: "About" },
+  { href: "/#program", label: "Program" },
+  { href: "/#season", label: "Season" },
 ];
 
 export function SiteHeader() {
@@ -18,20 +19,24 @@ export function SiteHeader() {
         Skip to content
       </a>
       <div className={styles.inner}>
-        <a className={styles.brand} href="#top" aria-label="Canby Robotics home">
+        <Link
+          aria-label="Canby Robotics home"
+          className={styles.brand}
+          href="/"
+        >
           <Text as="span" size="300" weight="bold">
             Canby Robotics
           </Text>
-        </a>
+        </Link>
         <nav className={styles.navigation} aria-label="Primary navigation">
           {navigation.map((item) => (
-            <a href={item.href} key={item.href}>
+            <Link href={item.href} key={item.href}>
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
-        <Button as="a" href="#join" size="small" variant="primary">
-          Preview joining
+        <Button as="a" href="/interest" size="small" variant="primary">
+          Join the club
         </Button>
       </div>
     </header>
