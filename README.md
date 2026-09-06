@@ -27,9 +27,9 @@ npm run dev
 
 The 2026-2027 BIOGLOW™ palette and usage rules are codified for application
 code and contributors. The public site uses the Build Bright identity, while
-official BIOGLOW colors and artwork are contained inside the season module.
-Founders is the project's only approved edition; Future teal is retained as
-reference-only source metadata.
+approved BIOGLOW artwork is contained inside a season module that uses Build
+Bright surfaces. Founders is the project's only approved edition; Future teal
+is retained as reference-only source metadata.
 
 - [`docs/brand/bioglow.md`](docs/brand/bioglow.md) is the implementation guide.
 - [`src/brand/bioglow.tokens.json`](src/brand/bioglow.tokens.json) is the
