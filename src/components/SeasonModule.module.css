@@ -1,16 +1,7 @@
 .module {
-  --canby-color-focus: var(--bioglow-core-dark-green);
-  --canby-color-highlight: var(--bioglow-core-yellow);
-
-  border-block-start: var(--canby-rule-width) solid
-    var(--bioglow-core-dark-green);
-  border-block-end: 0.5rem solid var(--bioglow-edition-accent);
-  color: var(--bioglow-core-dark-green);
-  background: color-mix(
-    in srgb,
-    var(--bioglow-core-light-green) 48%,
-    white
-  );
+  border-block: var(--canby-rule-width) solid var(--canby-color-rule);
+  color: var(--canby-color-text);
+  background: var(--canby-color-surface-subtle);
 }
 
 .frame {
@@ -31,7 +22,7 @@
 
 .index {
   margin: 0;
-  color: var(--bioglow-core-dark-green);
+  color: var(--canby-color-text-muted);
   font-family: var(--brand-fontStack-monospace);
   font-size: 0.8rem;
   font-weight: 700;
@@ -42,7 +33,7 @@
 .heading {
   max-width: 14ch;
   margin-block: 1.25rem 1rem;
-  color: var(--bioglow-core-black);
+  color: var(--canby-color-text);
   font-size: clamp(2rem, 5vw, 3.75rem);
   letter-spacing: -0.045em;
   line-height: 1.05;
@@ -52,20 +43,21 @@
 .body {
   max-width: 38rem;
   margin: 0;
+  color: var(--canby-color-text-muted);
   line-height: 1.6;
 }
 
 .link {
   margin-block-start: 1.5rem;
-  color: var(--bioglow-core-dark-green);
+  color: var(--canby-color-action);
   font-weight: 700;
-  text-decoration-color: var(--bioglow-core-green);
+  text-decoration-color: var(--canby-color-accent);
   text-decoration-thickness: 2px;
   text-underline-offset: 0.3rem;
 }
 
 .link:hover {
-  color: var(--bioglow-core-black);
+  color: var(--canby-color-action-hover);
 }
 
 .visual {
@@ -74,8 +66,8 @@
   min-height: 18rem;
   padding: clamp(2.5rem, 6vw, 5rem);
   border-block-start: var(--canby-rule-width) solid
-    var(--bioglow-core-dark-green);
-  background: var(--bioglow-core-yellow);
+    var(--canby-color-rule-strong);
+  background: var(--canby-color-canvas);
   place-items: center;
 }
 
@@ -93,14 +85,13 @@
   .visual {
     border-block-start: 0;
     border-inline-start: var(--canby-rule-width) solid
-      var(--bioglow-core-dark-green);
+      var(--canby-color-rule-strong);
   }
 }
 
 @media (min-width: 80rem) {
   .frame {
-    border-inline: var(--canby-rule-width) solid
-      var(--bioglow-core-dark-green);
+    border-inline: var(--canby-rule-width) solid var(--canby-color-rule);
   }
 }
 

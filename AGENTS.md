@@ -13,8 +13,8 @@ BIOGLOW™ season colors, copy, or artwork.
 - After artwork changes, update the asset manifest and run
   `npm run brand:check`. Approved PNGs are immutable originals.
 - Use CSS custom properties instead of duplicating BIOGLOW HEX values.
-- Keep BIOGLOW colors and artwork inside `src/components/SeasonModule.js`;
-  Build Bright is the site-wide identity.
+- Keep BIOGLOW artwork and any season-specific colors inside
+  `src/components/SeasonModule.js`; its default treatment uses Build Bright.
 - Founders is the only approved project edition. Select it explicitly with
   `data-bioglow-edition="founders"`.
 - Future teal is reference-only JSON metadata. Do not add Future CSS, UI, or

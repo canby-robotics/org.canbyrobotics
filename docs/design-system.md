@@ -104,9 +104,14 @@ Use `SeasonLogo` for manifest-backed `next/image` rendering. Select assets by
 manifest ID, preserve their intrinsic ratio and transparent safety zone, and
 never place them in a cropped or `overflow: hidden` wrapper.
 
-`SeasonModule` is the only application component that may apply official
-BIOGLOW colors or artwork. It owns `data-bioglow-edition="founders"` and keeps
-the season palette from influencing the header, hero, program content, calls
+`SeasonModule` is the only application component that may render official
+BIOGLOW artwork or apply approved season colors. It owns
+`data-bioglow-edition="founders"`, but its current homepage treatment uses
+Build Bright surfaces, text, links, focus, and rules around the approved
+full-color logo. This keeps a short "current season" message in the main
+browsing flow without introducing a visually separate mini-site.
+
+The season palette must not influence the header, hero, program content, calls
 to action, interest page, or footer. Legal attribution text may still mention
 the season outside the module.
 

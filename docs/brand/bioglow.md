@@ -81,10 +81,12 @@ source to preserve the complete official palette, but Future artwork,
 available to application code.
 
 The public site uses the project-owned Build Bright palette. Official BIOGLOW
-colors and artwork are restricted to `src/components/SeasonModule.js` and its
-CSS module so the seasonal campaign does not become the permanent Canby
-Robotics identity. Legal trademark attribution text is exempt from this visual
-placement rule.
+artwork and any approved season-color treatment are restricted to
+`src/components/SeasonModule.js` and its CSS module so the seasonal campaign
+does not become the permanent Canby Robotics identity. The current homepage
+module deliberately uses Build Bright surfaces around the approved full-color
+logo rather than restyling the section with the full season palette. Legal
+trademark attribution text is exempt from this visual placement rule.
 
 Set the Founders edition explicitly on the relevant container:
 
