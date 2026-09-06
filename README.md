@@ -23,11 +23,13 @@ npm ci
 npm run dev
 ```
 
-## Brand system
+## Seasonal brand system
 
 The 2026-2027 BIOGLOW™ palette and usage rules are codified for application
-code and contributors. Founders is the project's only approved edition;
-Future teal is retained as reference-only source metadata.
+code and contributors. The public site uses the Build Bright identity, while
+official BIOGLOW colors and artwork are contained inside the season module.
+Founders is the project's only approved edition; Future teal is retained as
+reference-only source metadata.
 
 - [`docs/brand/bioglow.md`](docs/brand/bioglow.md) is the implementation guide.
 - [`src/brand/bioglow.tokens.json`](src/brand/bioglow.tokens.json) is the
@@ -48,7 +50,8 @@ npm run brand:check
 
 ## Design system
 
-The site uses Primer Brand through a project-owned light theme and reusable
-gridline layout components. See [`docs/design-system.md`](docs/design-system.md)
-for the dependency boundary, semantic tokens, layout rules, and approved
-component surface.
+The site uses Primer Brand through the project-owned, light-only Build Bright
+theme and reusable gridline layout components. See
+[`docs/design-system.md`](docs/design-system.md) for the dependency boundary,
+semantic tokens, seasonal brand boundary, layout rules, and approved component
+surface.

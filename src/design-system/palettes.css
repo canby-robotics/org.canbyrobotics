@@ -1,0 +1,38 @@
+[data-canby-palette="build-bright"] {
+  color-scheme: light;
+
+  /*
+   * Project-owned approximations inspired by SPIKE Prime element colors.
+   * They are not official LEGO web-brand values.
+   */
+  --canby-build-bright-ink: #1b2a34;
+  --canby-build-bright-energy: #fac80a;
+  --canby-build-bright-signal: #68c3e2;
+  --canby-build-bright-action: #901f76;
+  --canby-build-bright-part-white: #f4f4f4;
+  --canby-build-bright-structural-gray: #646464;
+
+  --canby-color-canvas: #ffffff;
+  --canby-color-surface-subtle: color-mix(
+    in srgb,
+    var(--canby-build-bright-signal) 18%,
+    white
+  );
+  --canby-color-surface-strong: var(--canby-build-bright-energy);
+  --canby-color-text: var(--canby-build-bright-ink);
+  --canby-color-text-muted: var(--canby-build-bright-structural-gray);
+  --canby-color-rule: color-mix(
+    in srgb,
+    var(--canby-build-bright-ink) 28%,
+    transparent
+  );
+  --canby-color-rule-strong: var(--canby-build-bright-ink);
+  --canby-color-action: var(--canby-build-bright-action);
+  --canby-color-action-hover: var(--canby-build-bright-ink);
+  --canby-color-action-text: var(--canby-build-bright-part-white);
+  --canby-color-accent: var(--canby-build-bright-signal);
+  --canby-color-highlight: var(--canby-build-bright-energy);
+  --canby-color-inverse: var(--canby-build-bright-ink);
+  --canby-color-focus: var(--canby-build-bright-action);
+  --canby-color-preview: var(--canby-build-bright-signal);
+}

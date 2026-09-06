@@ -7,12 +7,12 @@ import "./globals.css";
 export const metadata = {
   title: "Canby Robotics",
   description:
-    "A design preview for the Canby Robotics club and the BIOGLOW season.",
+    "A design preview for Canby Robotics and its FIRST LEGO League program.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html data-canby-palette="build-bright" lang="en">
       <body>
         <CanbyThemeProvider>{children}</CanbyThemeProvider>
       </body>

@@ -5,8 +5,6 @@ import { Card } from "@primer-brand/Card/Card.js";
 import { CTABanner } from "@primer-brand/CTABanner/CTABanner.js";
 import { Grid } from "@primer-brand/Grid/Grid.js";
 import { Heading } from "@primer-brand/Heading/Heading.js";
-import { Link } from "@primer-brand/Link/Link.js";
-import { River } from "@primer-brand/river/River/River.js";
 import { Text } from "@primer-brand/Text/Text.js";
 
 import {
@@ -14,9 +12,9 @@ import {
   ConnectedGridCell,
 } from "@/design-system/ConnectedGrid";
 import { GridSection } from "@/design-system/GridSection";
-import { SeasonLogo } from "@/design-system/SeasonLogo";
 
 import styles from "@/app/page.module.css";
+import { SeasonModule } from "./SeasonModule";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -47,7 +45,6 @@ export function HomePagePreview() {
       <SiteHeader />
       <main
         className={styles.main}
-        data-bioglow-edition="founders"
         id="main-content"
         tabIndex={-1}
       >
@@ -96,28 +93,36 @@ export function HomePagePreview() {
                     size="large"
                     variant="secondary"
                   >
-                    Meet BIOGLOW™
+                    Current season
                   </Button>
                 </div>
               </section>
-              <aside
-                aria-label="Current season"
-                className={styles.heroSeason}
-              >
-                <div className={styles.heroSeasonMeta}>
-                  <span>2026–2027</span>
-                  <span>Founders Edition</span>
+              <div aria-hidden="true" className={styles.heroSignal}>
+                <div
+                  className={`${styles.heroSignalCell} ${styles.signalStrong}`}
+                >
+                  <span>01</span>
+                  Imagine
                 </div>
-                <div className={styles.heroLogoFrame}>
-                  <SeasonLogo
-                    alt="BIOGLOW™ Founders Edition"
-                    assetId="founders-horizontal-full-color"
-                    className={styles.heroLogo}
-                    loading="eager"
-                    sizes="(max-width: 48rem) 58vw, 20rem"
-                  />
+                <div
+                  className={`${styles.heroSignalCell} ${styles.signalAccent}`}
+                >
+                  <span>02</span>
+                  Build
                 </div>
-              </aside>
+                <div
+                  className={`${styles.heroSignalCell} ${styles.signalAction}`}
+                >
+                  <span>03</span>
+                  Code
+                </div>
+                <div
+                  className={`${styles.heroSignalCell} ${styles.signalInk}`}
+                >
+                  <span>04</span>
+                  Iterate
+                </div>
+              </div>
             </div>
           </GridSection>
         </div>
@@ -193,45 +198,7 @@ export function HomePagePreview() {
           </ConnectedGrid>
         </GridSection>
 
-        <section
-          className={styles.seasonBand}
-          data-bioglow-edition="founders"
-          id="season"
-        >
-          <River
-            align="start"
-            className={styles.seasonRiver}
-            variant="gridline"
-          >
-            <River.Content>
-              <Heading as="h2" size="3">
-                Meet the BIOGLOW™ season.
-              </Heading>
-              <Text as="p">
-                BIOGLOW™ is the 2026-2027 FIRST® LEGO® League season theme.
-                Replace the rest of this preview with the team&apos;s official
-                season goals, challenge focus, and participation details.
-              </Text>
-              <Link href="#join">Continue to the preview call to action</Link>
-            </River.Content>
-            <River.Visual
-              fillMedia={false}
-              hasShadow={false}
-              padding="all"
-              position="center"
-              rounded={false}
-            >
-              <div className={styles.seasonVisual}>
-                <SeasonLogo
-                  alt="BIOGLOW™ Founders Edition"
-                  assetId="founders-horizontal-full-color"
-                  className={styles.seasonLogo}
-                  sizes="(max-width: 48rem) 70vw, 32rem"
-                />
-              </div>
-            </River.Visual>
-          </River>
-        </section>
+        <SeasonModule />
 
         <CTABanner
           align="center"
