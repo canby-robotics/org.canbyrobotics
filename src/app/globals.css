@@ -1,5 +1,6 @@
 @import "../brand/bioglow.css";
 @import "../design-system/tokens.css";
+@import "../design-system/palettes.css";
 
 html {
   min-height: 100%;
@@ -32,7 +33,7 @@ a {
 
 ::selection {
   color: var(--canby-color-text);
-  background: var(--bioglow-core-yellow);
+  background: var(--canby-color-highlight);
 }
 
 :focus-visible {

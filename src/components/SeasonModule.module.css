@@ -1,0 +1,111 @@
+.module {
+  --canby-color-focus: var(--bioglow-core-dark-green);
+  --canby-color-highlight: var(--bioglow-core-yellow);
+
+  border-block-start: var(--canby-rule-width) solid
+    var(--bioglow-core-dark-green);
+  border-block-end: 0.5rem solid var(--bioglow-edition-accent);
+  color: var(--bioglow-core-dark-green);
+  background: color-mix(
+    in srgb,
+    var(--bioglow-core-light-green) 48%,
+    white
+  );
+}
+
+.frame {
+  display: grid;
+  width: 100%;
+  max-width: var(--canby-grid-max-width);
+  margin-inline: auto;
+}
+
+.copy {
+  display: flex;
+  min-width: 0;
+  padding: var(--canby-section-space) var(--canby-page-gutter);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.index {
+  margin: 0;
+  color: var(--bioglow-core-dark-green);
+  font-family: var(--brand-fontStack-monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.heading {
+  max-width: 14ch;
+  margin-block: 1.25rem 1rem;
+  color: var(--bioglow-core-black);
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.body {
+  max-width: 38rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.link {
+  margin-block-start: 1.5rem;
+  color: var(--bioglow-core-dark-green);
+  font-weight: 700;
+  text-decoration-color: var(--bioglow-core-green);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.3rem;
+}
+
+.link:hover {
+  color: var(--bioglow-core-black);
+}
+
+.visual {
+  display: grid;
+  min-width: 0;
+  min-height: 18rem;
+  padding: clamp(2.5rem, 6vw, 5rem);
+  border-block-start: var(--canby-rule-width) solid
+    var(--bioglow-core-dark-green);
+  background: var(--bioglow-core-yellow);
+  place-items: center;
+}
+
+.logo {
+  width: min(100%, 32rem) !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+@media (min-width: 48rem) {
+  .frame {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .visual {
+    border-block-start: 0;
+    border-inline-start: var(--canby-rule-width) solid
+      var(--bioglow-core-dark-green);
+  }
+}
+
+@media (min-width: 80rem) {
+  .frame {
+    border-inline: var(--canby-rule-width) solid
+      var(--bioglow-core-dark-green);
+  }
+}
+
+@media (max-width: 47.99rem) {
+  .visual {
+    min-height: 16rem;
+  }
+}

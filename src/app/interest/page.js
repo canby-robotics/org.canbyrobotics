@@ -14,7 +14,6 @@ export default function InterestPage() {
       <SiteHeader />
       <main
         className={styles.main}
-        data-bioglow-edition="founders"
         id="main-content"
         tabIndex={-1}
       >

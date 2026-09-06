@@ -1,29 +1,6 @@
 :root {
   color-scheme: light;
 
-  --canby-color-canvas: #ffffff;
-  --canby-color-surface-subtle: color-mix(
-    in srgb,
-    var(--bioglow-core-light-green) 24%,
-    white
-  );
-  --canby-color-surface-strong: var(--bioglow-core-light-green);
-  --canby-color-text: var(--bioglow-core-black);
-  --canby-color-text-muted: var(--bioglow-core-dark-green);
-  --canby-color-rule: color-mix(
-    in srgb,
-    var(--bioglow-core-dark-green) 34%,
-    transparent
-  );
-  --canby-color-rule-strong: var(--bioglow-core-dark-green);
-  --canby-color-action: var(--bioglow-core-dark-green);
-  --canby-color-action-hover: var(--bioglow-core-black);
-  --canby-color-focus: var(--bioglow-core-dark-green);
-  --canby-color-preview: var(
-    --bioglow-edition-accent,
-    var(--bioglow-founders-purple)
-  );
-
   --canby-grid-max-width: 80rem;
   --canby-page-gutter: 1.25rem;
   --canby-section-space: clamp(3.5rem, 8vw, 7rem);
@@ -33,22 +10,22 @@
   --canby-radius-large: 1.5rem;
 }
 
-.canby-theme[data-color-mode="light"] {
-  --brand-color-accent-primary: var(--bioglow-core-dark-green);
-  --brand-color-accent-secondary: var(--bioglow-core-yellow);
+:is(.canby-theme[data-color-mode="light"], [data-canby-palette]) {
+  --brand-color-accent-primary: var(--canby-color-action);
+  --brand-color-accent-secondary: var(--canby-color-highlight);
   --brand-color-text-default: var(--canby-color-text);
   --brand-color-text-muted: var(--canby-color-text-muted);
   --brand-color-text-subtle: var(--canby-color-text-muted);
-  --brand-color-text-onEmphasis: var(--bioglow-core-light-green);
-  --brand-color-text-emphasized: var(--bioglow-core-dark-green);
-  --brand-color-text-link-rest: var(--bioglow-core-dark-green);
-  --brand-color-text-link-pressed: var(--bioglow-core-black);
-  --brand-color-neutral-emphasisPlus: var(--bioglow-core-black);
-  --brand-color-neutral-emphasis: var(--bioglow-core-dark-green);
+  --brand-color-text-onEmphasis: var(--canby-color-action-text);
+  --brand-color-text-emphasized: var(--canby-color-action);
+  --brand-color-text-link-rest: var(--canby-color-action);
+  --brand-color-text-link-pressed: var(--canby-color-action-hover);
+  --brand-color-neutral-emphasisPlus: var(--canby-color-inverse);
+  --brand-color-neutral-emphasis: var(--canby-color-rule-strong);
   --brand-color-neutral-muted: var(--canby-color-rule);
   --brand-color-neutral-subtle: var(--canby-color-surface-subtle);
   --brand-color-canvas-default: var(--canby-color-canvas);
-  --brand-color-canvas-invert: var(--bioglow-core-black);
+  --brand-color-canvas-invert: var(--canby-color-inverse);
   --brand-color-canvas-overlay: var(--canby-color-canvas);
   --brand-color-canvas-inset: var(--canby-color-surface-subtle);
   --brand-color-canvas-subtle: var(--canby-color-surface-subtle);
@@ -64,10 +41,10 @@
   --brand-button-primary-borderColor-rest: var(--canby-color-action);
   --brand-button-primary-borderColor-hover: var(--canby-color-action-hover);
   --brand-button-primary-borderColor-active: var(--canby-color-action-hover);
-  --brand-button-primary-fgColor-rest: var(--bioglow-core-light-green);
+  --brand-button-primary-fgColor-rest: var(--canby-color-action-text);
   --brand-button-secondary-bgColor-rest: transparent;
   --brand-button-secondary-bgColor-hover: var(--canby-color-surface-subtle);
-  --brand-button-secondary-bgColor-active: var(--bioglow-core-light-green);
+  --brand-button-secondary-bgColor-active: var(--canby-color-surface-strong);
   --brand-button-secondary-borderColor-rest: var(--canby-color-rule-strong);
   --brand-button-secondary-borderColor-hover: var(--canby-color-rule-strong);
   --brand-button-secondary-borderColor-active: var(--canby-color-rule-strong);
