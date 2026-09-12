@@ -7,6 +7,7 @@ import { Grid } from "@primer-brand/Grid/Grid.js";
 import { Heading } from "@primer-brand/Heading/Heading.js";
 import { Text } from "@primer-brand/Text/Text.js";
 
+import { BuildLoop } from "@/design-system/BuildLoop";
 import {
   ConnectedGrid,
   ConnectedGridCell,
@@ -18,28 +19,28 @@ import { SeasonModule } from "./SeasonModule";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
-const featurePreviews = [
+const programHighlights = [
   {
-    label: "Placeholder copy 01",
-    title: "Learn by exploring",
+    label: "Robot game",
+    title: "Build, code, and test",
     description:
-      "Replace with the club's learning model, age range, and the skills students can expect to practice.",
+      "Students design and program a LEGO® robot, develop mission strategies, and improve their work through hands-on testing.",
   },
   {
-    label: "Placeholder copy 02",
-    title: "Build with a team",
+    label: "Innovation project",
+    title: "Investigate and invent",
     description:
-      "Replace with an accurate description of team structure, meeting cadence, and available mentor support.",
+      "The team researches a biodiversity challenge, creates a possible solution, and strengthens the idea by gathering feedback.",
   },
   {
-    label: "Placeholder copy 03",
-    title: "Share the result",
+    label: "Core Values",
+    title: "Grow as a team",
     description:
-      "Replace with verified details about events, competitions, demonstrations, or community showcases.",
+      "Students practice curiosity, inclusion, teamwork, and confident communication as they prepare to share their work at an ORTOP event.",
   },
 ];
 
-export function HomePagePreview() {
+export function HomePage() {
   return (
     <>
       <SiteHeader />
@@ -55,13 +56,13 @@ export function HomePagePreview() {
             divider="bottom"
             padding="none"
           >
-            <div className={styles.heroSplit}>
+            <div className={styles.heroLayout}>
               <section
                 aria-labelledby="home-hero-heading"
                 className={styles.heroCopy}
               >
-                <span className={styles.placeholderLabel}>
-                  Design preview · placeholder copy
+                <span className={styles.heroEyebrow}>
+                  Community team · Grades 4–8
                 </span>
                 <Heading
                   as="h1"
@@ -79,50 +80,31 @@ export function HomePagePreview() {
                   size="300"
                   variant="muted"
                 >
-                  Replace this introduction with Canby Robotics&apos; approved
-                  mission and a concise invitation for students, families, and
-                  mentors.
+                  Canby Robotics is a welcoming, community-led FIRST® LEGO®
+                  League Challenge team. Students build, code, and solve
+                  problems together while growing their curiosity, confidence,
+                  and teamwork.
                 </Text>
                 <div className={styles.heroActions}>
-                  <Button as="a" href="#about" size="large" variant="primary">
-                    Explore the preview
+                  <Button
+                    as="a"
+                    href="/interest"
+                    size="large"
+                    variant="primary"
+                  >
+                    Join the interest list
                   </Button>
                   <Button
                     as="a"
-                    href="#season"
+                    href="#program"
                     size="large"
                     variant="secondary"
                   >
-                    Current season
+                    See how it works
                   </Button>
                 </div>
               </section>
-              <div aria-hidden="true" className={styles.heroSignal}>
-                <div
-                  className={`${styles.heroSignalCell} ${styles.signalStrong}`}
-                >
-                  <span>01</span>
-                  Imagine
-                </div>
-                <div
-                  className={`${styles.heroSignalCell} ${styles.signalAccent}`}
-                >
-                  <span>02</span>
-                  Build
-                </div>
-                <div
-                  className={`${styles.heroSignalCell} ${styles.signalAction}`}
-                >
-                  <span>03</span>
-                  Code
-                </div>
-                <div
-                  className={`${styles.heroSignalCell} ${styles.signalInk}`}
-                >
-                  <span>04</span>
-                  Iterate
-                </div>
-              </div>
+              <BuildLoop />
             </div>
           </GridSection>
         </div>
@@ -140,9 +122,8 @@ export function HomePagePreview() {
               className={styles.introCopy}
               span={{ xsmall: 12, large: 8 }}
             >
-              <span className={styles.placeholderLabel}>Placeholder copy</span>
               <Heading as="h2" size="2" textWrap="balance">
-                A place to turn curiosity into something real.
+                A local team built for curious problem-solvers.
               </Heading>
               <Text
                 as="p"
@@ -150,9 +131,14 @@ export function HomePagePreview() {
                 size="300"
                 variant="muted"
               >
-                Replace this section with a verified overview of who Canby
-                Robotics serves, what participants create, and how the program
-                supports learning through collaboration.
+                Canby Robotics began with local parents looking for a way to
+                bring LEGO® robotics to their kids. In partnership with the{" "}
+                <a className={styles.inlineLink} href="https://ortop.org/">
+                  Oregon Robotics Tournament &amp; Outreach Program
+                </a>{" "}
+                and the Canby Public Library Maker Lab, we give students a
+                welcoming place to experiment, collaborate, and turn ideas into
+                working solutions.
               </Text>
             </Grid.Column>
           </Grid>
@@ -168,14 +154,26 @@ export function HomePagePreview() {
           <div className={styles.featureIntro}>
             <p className={styles.sectionIndex}>02 / Program</p>
             <div className={styles.featureIntroCopy}>
-              <span className={styles.placeholderLabel}>Placeholder copy</span>
               <Heading as="h2" size="3" textWrap="balance">
-                One connected path from first idea to final build.
+                Build a robot. Solve a problem. Grow as a team.
               </Heading>
+              <Text
+                as="p"
+                className={styles.featureIntroBody}
+                size="300"
+                variant="muted"
+              >
+                The team meets Mondays from 4:30–6:00 p.m. at the Canby Public
+                Library Maker Lab. Using the FIRST LEGO League Engineering
+                Notebook, students work from introductory lessons toward a
+                robot game, an innovation project, and an event presentation.
+                Participation is free, all equipment is provided, and no prior
+                robotics or coding experience is required.
+              </Text>
             </div>
           </div>
           <ConnectedGrid>
-            {featurePreviews.map((feature) => (
+            {programHighlights.map((feature) => (
               <ConnectedGridCell
                 className={styles.featureCell}
                 key={feature.title}
@@ -183,10 +181,10 @@ export function HomePagePreview() {
                 <Card
                   backgroundColor="none"
                   className={styles.featureCard}
-                  ctaText="Preview this pathway"
+                  ctaText="Join the interest list"
                   disableAnimation
                   fullWidth
-                  href="#join"
+                  href="/interest"
                   variant="minimal"
                 >
                   <Card.Label>{feature.label}</Card.Label>
@@ -207,15 +205,16 @@ export function HomePagePreview() {
           id="join"
         >
           <CTABanner.Heading as="h2">
-            Interested in Canby Robotics?
+            Interested in the next Canby Robotics team?
           </CTABanner.Heading>
           <CTABanner.Description>
-            Use the interest form to tell us you would like to learn more about
-            joining the club.
+            We form one dedicated team of up to eight students in grades 4–8
+            and do not add new participants after the season begins. Submit the
+            interest form to be considered for the next available team.
           </CTABanner.Description>
           <CTABanner.ButtonGroup>
             <Button as="a" href="/interest" size="large" variant="primary">
-              View the interest form
+              Join the interest list
             </Button>
           </CTABanner.ButtonGroup>
         </CTABanner>

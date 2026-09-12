@@ -58,10 +58,29 @@ Use semantic variables such as:
 - `--canby-color-accent`
 - `--canby-color-highlight`
 - `--canby-color-focus`
+- `--canby-color-process-imagine`
+- `--canby-color-process-build`
+- `--canby-color-process-code`
+- `--canby-color-process-iterate`
 
 Application components must consume Canby semantic variables rather than raw
 Build Bright values. Neutral surfaces and assignments such as "primary action"
 are Canby project decisions, not official FIRST or LEGO brand rules.
+
+### Build loop
+
+The four recurring process phrases have stable color assignments:
+
+| Phrase | Surface token | Text token |
+| --- | --- | --- |
+| Imagine | `--canby-color-process-imagine` | `--canby-color-process-imagine-text` |
+| Build | `--canby-color-process-build` | `--canby-color-process-build-text` |
+| Code | `--canby-color-process-code` | `--canby-color-process-code-text` |
+| Iterate | `--canby-color-process-iterate` | `--canby-color-process-iterate-text` |
+
+Use `BuildLoop` for the shared compact treatment. Other components may use
+the same process tokens, but they must preserve these phrase-to-color
+assignments and provide enough non-color context to keep the meaning clear.
 
 ### Build Bright palette
 
@@ -123,6 +142,7 @@ reference-only.
 - `CanbyThemeProvider`
 - `GridSection`
 - `ConnectedGrid` and `ConnectedGridCell`
+- `BuildLoop`
 - `SeasonLogo`
 - `SeasonModule`
 - `SiteHeader`

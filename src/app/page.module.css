@@ -10,14 +10,14 @@
   background: var(--canby-color-canvas);
 }
 
-.heroSplit {
+.heroLayout {
   display: grid;
 }
 
 .heroCopy {
   display: flex;
   min-width: 0;
-  padding: clamp(3.5rem, 6vw, 6rem) var(--canby-page-gutter);
+  padding: clamp(3.5rem, 6vw, 5.5rem) var(--canby-page-gutter);
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -31,7 +31,7 @@
 }
 
 .heroDescription {
-  max-width: 32rem;
+  max-width: 38rem;
 }
 
 .heroActions {
@@ -42,62 +42,7 @@
   gap: 0.75rem;
 }
 
-.heroSignal {
-  display: grid;
-  min-width: 0;
-  min-height: 20rem;
-  border-block-start: var(--canby-rule-width) solid var(--canby-color-rule);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.heroSignalCell {
-  display: flex;
-  min-width: 0;
-  min-height: 10rem;
-  padding: 1.25rem;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  font-weight: 800;
-}
-
-.heroSignalCell:nth-child(even) {
-  border-inline-start: var(--canby-rule-width) solid
-    var(--canby-color-rule-strong);
-}
-
-.heroSignalCell:nth-child(n + 3) {
-  border-block-start: var(--canby-rule-width) solid
-    var(--canby-color-rule-strong);
-}
-
-.heroSignalCell span {
-  font-family: var(--brand-fontStack-monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-}
-
-.signalStrong {
-  color: var(--canby-color-text);
-  background: var(--canby-color-surface-strong);
-}
-
-.signalAccent {
-  color: var(--canby-color-text);
-  background: var(--canby-color-accent);
-}
-
-.signalAction {
-  color: var(--canby-color-action-text);
-  background: var(--canby-color-action);
-}
-
-.signalInk {
-  color: var(--canby-color-action-text);
-  background: var(--canby-color-inverse);
-}
-
-.placeholderLabel {
+.heroEyebrow {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -112,6 +57,17 @@
   letter-spacing: 0.06em;
   line-height: 1;
   text-transform: uppercase;
+}
+
+.inlineLink {
+  color: var(--canby-color-action);
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2rem;
+}
+
+.inlineLink:hover {
+  color: var(--canby-color-action-hover);
 }
 
 .introGrid {
@@ -161,6 +117,10 @@
   gap: 1.25rem;
 }
 
+.featureIntroBody {
+  max-width: 44rem;
+}
+
 .featureCell {
   min-width: 0;
   background: var(--canby-color-canvas);
@@ -175,22 +135,14 @@
 }
 
 @media (min-width: 48rem) {
-  .heroSplit {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .heroHeading {
+    max-width: 13ch;
     line-height: 1.1 !important;
   }
 
   .heroActions {
     flex-direction: row;
     flex-wrap: wrap;
-  }
-
-  .heroSignal {
-    border-block-start: 0;
-    border-inline-start: var(--canby-rule-width) solid var(--canby-color-rule);
   }
 
   .featureIntro {

@@ -11,8 +11,8 @@ function classes(...names) {
 export function SeasonModule({
   className,
   id = "season",
-  linkHref = "#join",
-  linkLabel = "Continue to the preview call to action",
+  linkHref = "/interest",
+  linkLabel = "Join the interest list",
 }) {
   const headingId = `${id}-heading`;
 
@@ -27,12 +27,14 @@ export function SeasonModule({
         <div className={styles.copy}>
           <p className={styles.index}>03 / 2026-2027 season</p>
           <h2 className={styles.heading} id={headingId}>
-            Meet the BIOGLOW™ season.
+            Take on the BIOGLOW™ challenge.
           </h2>
           <p className={styles.body}>
-            BIOGLOW™ is the 2026-2027 FIRST® LEGO® League season theme.
-            Replace the rest of this preview with the team&apos;s official
-            season goals, challenge focus, and participation details.
+            The 2026–2027 BIOGLOW™ season invites students to explore a
+            biodiversity challenge and design a possible solution. Our team
+            will pair that innovation project with robot missions, testing, and
+            presentation practice as we prepare to attend an ORTOP FIRST® LEGO®
+            League event. Event date to be announced.
           </p>
           <Link className={styles.link} href={linkHref}>
             {linkLabel}
