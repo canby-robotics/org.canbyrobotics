@@ -10,6 +10,7 @@ import Link from "next/link";
 import { SeasonModule } from "@/components/SeasonModule";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { BuildLoop } from "@/design-system/BuildLoop";
 
 import styles from "./page.module.css";
 
@@ -17,25 +18,25 @@ const palette = [
   {
     className: "swatchInk",
     name: "Ink",
-    role: "Text, rules, dark surfaces",
+    role: "Iterate, text, rules, dark surfaces",
     value: "#1B2A34",
   },
   {
     className: "swatchEnergy",
     name: "Energy",
-    role: "Strong surfaces and highlights",
+    role: "Imagine, strong surfaces and highlights",
     value: "#FAC80A",
   },
   {
     className: "swatchSignal",
     name: "Signal",
-    role: "Subtle surfaces and accents",
+    role: "Build, subtle surfaces and accents",
     value: "#68C3E2",
   },
   {
     className: "swatchAction",
     name: "Action",
-    role: "Primary actions, links, focus",
+    role: "Code, primary actions, links, focus",
     value: "#901F76",
   },
   {
@@ -216,24 +217,7 @@ export function BuildBrightReference() {
                 <BrandLink href="/interest">Text-link treatment</BrandLink>
               </div>
 
-              <div aria-hidden="true" className={styles.signalBoard}>
-                <div className={classes(styles.signalCell, styles.signalEnergy)}>
-                  <span>01</span>
-                  Imagine
-                </div>
-                <div className={classes(styles.signalCell, styles.signalSignal)}>
-                  <span>02</span>
-                  Build
-                </div>
-                <div className={classes(styles.signalCell, styles.signalAction)}>
-                  <span>03</span>
-                  Code
-                </div>
-                <div className={classes(styles.signalCell, styles.signalInk)}>
-                  <span>04</span>
-                  Iterate
-                </div>
-              </div>
+              <BuildLoop />
             </div>
 
             <div className={styles.cardGrid}>

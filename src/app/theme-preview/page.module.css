@@ -120,26 +120,22 @@
     var(--canby-color-rule-strong);
 }
 
-.swatchInk,
-.signalInk {
+.swatchInk {
   color: var(--canby-color-action-text);
   background: var(--canby-build-bright-ink);
 }
 
-.swatchEnergy,
-.signalEnergy {
+.swatchEnergy {
   color: var(--canby-color-text);
   background: var(--canby-build-bright-energy);
 }
 
-.swatchSignal,
-.signalSignal {
+.swatchSignal {
   color: var(--canby-color-text);
   background: var(--canby-build-bright-signal);
 }
 
-.swatchAction,
-.signalAction {
+.swatchAction {
   color: var(--canby-color-action-text);
   background: var(--canby-build-bright-action);
 }
@@ -280,41 +276,6 @@
   gap: 0.75rem;
 }
 
-.signalBoard {
-  display: grid;
-  min-height: 22rem;
-  border-block-start: var(--canby-rule-width) solid
-    var(--canby-color-rule-strong);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.signalCell {
-  display: flex;
-  min-width: 0;
-  min-height: 11rem;
-  padding: 1.25rem;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  font-weight: 800;
-}
-
-.signalCell:nth-child(even) {
-  border-inline-start: var(--canby-rule-width) solid
-    var(--canby-color-rule-strong);
-}
-
-.signalCell:nth-child(n + 3) {
-  border-block-start: var(--canby-rule-width) solid
-    var(--canby-color-rule-strong);
-}
-
-.signalCell span {
-  font-family: var(--brand-fontStack-monospace);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-}
-
 .cardGrid {
   display: grid;
   border-block-end: var(--canby-rule-width) solid
@@ -386,16 +347,6 @@
 
   .contrastGrid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  .componentDemo {
-    grid-template-columns: minmax(0, 3fr) minmax(18rem, 2fr);
-  }
-
-  .signalBoard {
-    border-block-start: 0;
-    border-inline-start: var(--canby-rule-width) solid
-      var(--canby-color-rule-strong);
   }
 
   .cardGrid {
