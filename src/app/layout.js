@@ -7,7 +7,7 @@ import "./globals.css";
 export const metadata = {
   title: "Canby Robotics",
   description:
-    "A design preview for Canby Robotics and its FIRST LEGO League program.",
+    "A community FIRST LEGO League Challenge team for students in grades 4–8 in Canby.",
 };
 
 export default function RootLayout({ children }) {

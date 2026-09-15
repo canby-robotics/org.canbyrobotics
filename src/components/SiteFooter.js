@@ -14,7 +14,8 @@ export function SiteFooter() {
             Canby Robotics
           </Text>
           <Text as="p" size="100" variant="muted">
-            Design-system preview with placeholder organization content.
+            A community FIRST® LEGO® League Challenge team in partnership with
+            ORTOP and the Canby Public Library Maker Lab.
           </Text>
         </div>
         <nav className={styles.links} aria-label="Footer navigation">

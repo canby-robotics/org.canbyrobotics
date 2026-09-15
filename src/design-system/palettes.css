@@ -35,4 +35,15 @@
   --canby-color-inverse: var(--canby-build-bright-ink);
   --canby-color-focus: var(--canby-build-bright-action);
   --canby-color-preview: var(--canby-build-bright-signal);
+
+  --canby-color-process-imagine: var(--canby-build-bright-energy);
+  --canby-color-process-imagine-text: var(--canby-build-bright-ink);
+  --canby-color-process-build: var(--canby-build-bright-signal);
+  --canby-color-process-build-text: var(--canby-build-bright-ink);
+  --canby-color-process-code: var(--canby-build-bright-action);
+  --canby-color-process-code-text: var(--canby-build-bright-part-white);
+  --canby-color-process-iterate: var(--canby-build-bright-ink);
+  --canby-color-process-iterate-text: var(
+    --canby-build-bright-part-white
+  );
 }

@@ -36,7 +36,7 @@ export function SiteHeader() {
           ))}
         </nav>
         <Button as="a" href="/interest" size="small" variant="primary">
-          Join the club
+          Interest form
         </Button>
       </div>
     </header>
